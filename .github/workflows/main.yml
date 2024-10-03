@@ -1,0 +1,16 @@
+name: CI
+ 
+on: [push]
+ 
+jobs:
+  run-docker-action:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+ 
+    - name: Run My Docker Action
+      uses: ./  # Use the current repository
+      with:
+        image: 'alpine'
+        args: 'echo Hello, World!'

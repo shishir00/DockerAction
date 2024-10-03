@@ -1,0 +1,16 @@
+name: 'My Docker Action'
+description: 'A custom action that runs a Docker container'
+inputs:
+  image:
+    description: 'The Docker image to run'
+    required: true
+  args:
+    description: 'Arguments to pass to the Docker container'
+    required: false
+    default: ''
+outputs:
+  container_id:
+    description: 'The ID of the running container'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
